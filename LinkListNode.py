@@ -2,7 +2,7 @@
 
 
 class Node:
-	# Default constructor 
+	# Default constructor
 	def __init__(self, data):
 		self.data = data;
 		self.next = None; # make None as defalt value for next
@@ -86,7 +86,7 @@ def insertNode(position, data, head):
 		newNode.next = tempNode;
 		head = newNode;
 		return True;
-	
+
 	#insert somewhere at middle;
 
 	index = 1;
@@ -115,7 +115,7 @@ def deleteNode(head, postion):
 		value = currentNode.data;
 		currentNode = None;
 		return head;
-	
+
 	prevNode = head;
 	index = 1
 	while index < postion and currentNode is not None:
@@ -146,6 +146,25 @@ def deleteList(head):
 
 	del(head);
 
+
+def findMidPointOFLL(head):
+	if head == None:
+		print("Linked List has not node");
+		return -1;
+	if head.next == None:
+		return head;
+
+	currentNode = head;
+	tempNode = head;
+	while currentNode != None and currentNode.next != None:
+		print("Temp: ",tempNode.data, "current: ",currentNode.data);
+		tempNode = tempNode.next;
+		currentNode = currentNode.next.next;
+	return tempNode;
+
+
+
+
 #### Driver program
 
 nodeA = Node(1)
@@ -154,13 +173,15 @@ nodeC = Node(3)
 nodeD = Node(4)
 nodeE = Node(5)
 nodeF = Node(6)
+nodeG = Node(7)
+
 
 nodeA.next = nodeB
 nodeB.next = nodeC
 nodeC.next = nodeD
 nodeD.next = nodeE
 nodeE.next = nodeF
-
+nodeF.next = nodeG
 # print("Number of node in Single Link List", countNode(nodeA));
 # printLinkedList(nodeA);
 # nowNewHead = reverseLinkedList(nodeA);
@@ -168,23 +189,13 @@ nodeE.next = nodeF
 # deleting a node
 head = nodeA;
 printLinkedList(head);
-head = print("DELETED NODE: ", deleteNode(head,1));
-printLinkedList(head);
-
+# head = print("DELETED NODE: ", deleteNode(head,1));
+# printLinkedList(head);
+print("------------------------")
+midNode = findMidPointOFLL(head);
+print(midNode.data);
 
 #deleting the entire list
 	# printLinkedList(head);
 	# print("DELETED NODE: ", deleteList(head));
 	# printLinkedList(nodeA);
-
-
-
-
-
-
-
-
-
-
-
-
