@@ -122,8 +122,6 @@ def findNthNodeFromEnd(head, position):
 
 	return tempTwo;
 
-
-
 #### Driver program
 
 nodeA = Node(1)
