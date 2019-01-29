@@ -22,10 +22,10 @@ class Stack(object):
 
     def top(self):
         if len(self.stackArr) <= 0:
-            print("StackOverFlow");
+            print("StackUnderFlow");
             return 0;
         else:
-            self.stackArr[-1]
+            self.stackArr[-0]
 
     def size(self):
         return len(self.stackArr);
@@ -41,12 +41,12 @@ our_stack.push("14")
 our_stack.push("11")
 our_stack.push("31")
 
-our_stack.push("14")
-our_stack.push("15")
-our_stack.push("19")
-our_stack.push("3")
-our_stack.push("99")
-our_stack.push("9")
+# our_stack.push("14")
+# our_stack.push("15")
+# our_stack.push("19")
+# our_stack.push("3")
+# our_stack.push("99")
+# our_stack.push("9")
 print (our_stack.top())
 print (our_stack.pop())
 print (our_stack.top())
